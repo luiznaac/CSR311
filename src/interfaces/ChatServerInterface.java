@@ -9,7 +9,7 @@ package interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.List;
+import java.util.HashMap;
 
 public interface ChatServerInterface extends Remote {
 
@@ -19,6 +19,6 @@ public interface ChatServerInterface extends Remote {
 
 	void send(String message) throws RemoteException;
 
-	List<String> getUserList() throws RemoteException;
+	HashMap<String, String> getUserList() throws RemoteException;
 
 }

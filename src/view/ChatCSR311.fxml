@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="650.0" maxWidth="600.0" minHeight="650.0" minWidth="600.0" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatCSR311Controller">
+   <top>
+      <HBox fx:id="hbxLogin" alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="590.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Username:" />
+            <TextField fx:id="txtUsername" prefHeight="25.0" prefWidth="125.0" />
+            <Label text="Server IP:" />
+            <TextField fx:id="txtIP" prefHeight="25.0" prefWidth="125.0" />
+            <fx:define>
+				<ToggleGroup fx:id="tgRxTx"/>
+   			</fx:define>
+	        <RadioButton fx:id="rbSender" mnemonicParsing="false" selected="true" text="Sender" toggleGroup="$tgRxTx" />
+	        <RadioButton fx:id="rbReceiver" mnemonicParsing="false" text="Receiver" toggleGroup="$tgRxTx" />
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#loginPressed" text="Login" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="txtMessage" onKeyPressed="#sendEnter" prefHeight="170.0" prefWidth="506.0" wrapText="true" />
+            <TextArea fx:id="txtBinary" onKeyPressed="#sendEnter" prefHeight="170.0" prefWidth="506.0" wrapText="true" editable="false" />
+            <TextArea fx:id="txtAlgorithm" onKeyPressed="#sendEnter" prefHeight="170.0" prefWidth="506.0" wrapText="true" editable="false" />
+            <ScrollPane prefHeight="170.0" BorderPane.alignment="CENTER">
+				<content>
+					<Pane fx:id="pnGraphic" />
+				</content>
+	        </ScrollPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox fx:id="hbxSend" prefHeight="40.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendPressed" prefHeight="40.0" prefWidth="593.0" text="Send" />
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</BorderPane>

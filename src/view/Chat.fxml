@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="650.0" maxWidth="600.0" minHeight="650.0" minWidth="600.0" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatController">
+   <top>
+      <HBox fx:id="hbxLogin" alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="590.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Username:" />
+            <TextField fx:id="txtUsername" />
+            <Label text="Server IP:" />
+            <TextField fx:id="txtIP" />
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#loginPressed" text="Login" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </top>
+	<center>
+      <TextArea fx:id="txtMessages" editable="false" prefHeight="406.0" prefWidth="600.0" wrapText="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin></TextArea>
+   </center>
+   <bottom>
+      <HBox fx:id="hbxSend" prefHeight="170.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="txtMessage" onKeyPressed="#sendEnter" prefHeight="170.0" prefWidth="506.0" wrapText="true" />
+            <Button fx:id="btnSend" mnemonicParsing="false" onAction="#sendPressed" prefHeight="169.0" prefWidth="94.0" text="Send" />
+            <Button fx:id="btnTest" mnemonicParsing="false" onAction="#testPressed" prefHeight="25.0" prefWidth="68.0" text="Test" />
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</BorderPane>

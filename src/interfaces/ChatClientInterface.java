@@ -15,5 +15,6 @@ public interface ChatClientInterface extends Remote {
 
 	void receive(String message) throws RemoteException;
 	String getName() throws RemoteException;
+	Boolean getMode() throws RemoteException;
 
 }
